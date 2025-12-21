@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ic_ozelliks",
+  "info": {
+    "singularName": "ic-ozellik",
+    "pluralName": "ic-ozelliks",
+    "displayName": "IcOzellik"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "isim": {
+      "type": "string"
+    },
+    "ilans": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::ilan.ilan",
+      "mappedBy": "ic_donanimlar"
+    }
+  }
+}

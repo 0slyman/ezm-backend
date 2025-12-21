@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "yorums",
+  "info": {
+    "singularName": "yorum",
+    "pluralName": "yorums",
+    "displayName": "Yorum"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "ad_soyad": {
+      "type": "string"
+    },
+    "mesaj": {
+      "type": "text"
+    },
+    "tarih": {
+      "type": "datetime"
+    },
+    "makale": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::makale.makale",
+      "inversedBy": "yorums"
+    },
+    "email": {
+      "type": "email"
+    }
+  }
+}

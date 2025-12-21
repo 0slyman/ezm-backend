@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "mesajs",
+  "info": {
+    "singularName": "mesaj",
+    "pluralName": "mesajs",
+    "displayName": "mesaj"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "ad_soyad": {
+      "type": "string"
+    },
+    "soyad": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "mesaj": {
+      "type": "text"
+    }
+  }
+}

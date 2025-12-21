@@ -1,0 +1,105 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ilans",
+  "info": {
+    "singularName": "ilan",
+    "pluralName": "ilans",
+    "displayName": "Ilan"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "baslik": {
+      "type": "string"
+    },
+    "aciklama": {
+      "type": "blocks"
+    },
+    "fiyat": {
+      "type": "integer"
+    },
+    "konum": {
+      "type": "string"
+    },
+    "Kategori": {
+      "type": "enumeration",
+      "enum": [
+        "Satilik",
+        "Kiralik"
+      ]
+    },
+    "gorseller": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "baslik"
+    },
+    "metrekare": {
+      "type": "string"
+    },
+    "oda_sayisi": {
+      "type": "string"
+    },
+    "emlak_tipi": {
+      "type": "enumeration",
+      "enum": [
+        "Daire",
+        "Arsa",
+        "Villa",
+        "Müstakil Ev",
+        "Ofis",
+        "Dükkan",
+        "Tarla"
+      ]
+    },
+    "bina_yasi": {
+      "type": "integer"
+    },
+    "bulundugu_kat": {
+      "type": "integer"
+    },
+    "isitma": {
+      "type": "enumeration",
+      "enum": [
+        "Kombi",
+        "Merkezi",
+        "Soba",
+        "Yerden Isıtma",
+        "Klima",
+        "Yok"
+      ]
+    },
+    "esyali": {
+      "type": "boolean"
+    },
+    "krediye_uygun": {
+      "type": "boolean"
+    },
+    "goruntulenme": {
+      "type": "integer",
+      "default": 0
+    },
+    "ic_donanimlar": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::ic-ozellik.ic-ozellik",
+      "inversedBy": "ilans"
+    },
+    "dis_donanimlar": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::dis-ozellik.dis-ozellik",
+      "inversedBy": "ilans"
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "makales",
+  "info": {
+    "singularName": "makale",
+    "pluralName": "makales",
+    "displayName": "Makale"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "baslik": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "baslik"
+    },
+    "ozet": {
+      "type": "text"
+    },
+    "icerik": {
+      "type": "richtext"
+    },
+    "kapak": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "tarih": {
+      "type": "date"
+    },
+    "yorums": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::yorum.yorum",
+      "mappedBy": "makale"
+    },
+    "goruntulenme": {
+      "type": "integer",
+      "default": 0
+    }
+  }
+}
