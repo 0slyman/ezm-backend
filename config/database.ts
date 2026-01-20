@@ -1,8 +1,8 @@
 import path from 'path';
 
 export default ({ env }) => {
-  // Railway'de 'postgres', bilgisayarında 'sqlite' olarak çalışmasını sağlar
-  const client = env('DATABASE_CLIENT', 'sqlite');
+  // Eğer Railway'de isek (DATABASE_URL varsa) postgres kullan, yoksa sqlite (bilgisayarım) kullan
+  const client = env('DATABASE_URL') ? 'postgres' : 'sqlite';
 
   const connections = {
     sqlite: {
@@ -13,7 +13,6 @@ export default ({ env }) => {
     },
     postgres: {
       connection: {
-        // Railway'in verdiği tek satırlık bağlantı adresini kullanır
         connectionString: env('DATABASE_URL'),
         ssl: env.bool('DATABASE_SSL', false) && {
           rejectUnauthorized: env.bool('DATABASE_SSL_REJECT_UNAUTHORIZED', true),
