@@ -611,6 +611,7 @@ export interface ApiIlanIlan extends Struct.CollectionTypeSchema {
     metrekare: Schema.Attribute.String;
     oda_sayisi: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
+    satildi: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     slug: Schema.Attribute.UID<'baslik'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
